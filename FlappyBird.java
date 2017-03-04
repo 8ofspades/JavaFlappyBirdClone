@@ -45,8 +45,15 @@ public class FlappyBird{
 				if(key==KeyEvent.VK_SPACE){
 				    bird.jump(); //jump when space is pressed
 				}
+				//restart game when r is pressed
 				if(key==KeyEvent.VK_R){
-				    System.out.println("R is pressed"); //placeholder for restart button
+				    bird.reset();
+				    wall1=new Wall(600);
+				    wall2=new Wall(1000);
+				    movetimer.start();
+				    scoretimer.start();
+				    score=0;
+				    isDead=false;
 				}
 		    }
 		    public void keyReleased(KeyEvent evt){}
